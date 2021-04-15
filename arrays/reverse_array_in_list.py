@@ -1,4 +1,4 @@
-def reversed(nums):
+def reversed_array(nums):
     start_index = 0
     end_index = len(nums) - 1
     while end_index > start_index:
@@ -8,5 +8,6 @@ def reversed(nums):
     return nums
 
 
-n = [1, 2, 3, 4, 5, 6, 7, 8]
-print(reversed(n))
+if __name__ == '__main__':
+    n = [1, 2, 3, 4, 5, 6, 7, 8]
+    print(reversed_array(n))
