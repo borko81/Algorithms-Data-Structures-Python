@@ -39,6 +39,25 @@ class LinkedList:
             print(actual_node.data)
             actual_node = actual_node.nextNode
 
+    def remove(self, data):
+        if self.head is None:
+            return
+
+        actual_node = self.head
+        previous = None
+        while actual_node is not None and not actual_node.data == data:
+            previous = actual_node
+            actual_node = actual_node.nextNode
+
+        # search miss
+        if actual_node is None:
+            return
+
+        if previous is None:
+            self.head = actual_node.nextNode
+        else:
+            previous.nexNode = actual_node.nextNode
+
 
 if __name__ == '__main__':
     liked_list = LinkedList()
