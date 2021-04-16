@@ -58,6 +58,16 @@ class LinkedList:
         else:
             previous.nexNode = actual_node.nextNode
 
+    def get_middle_item(self):
+        fast = self.head
+        slow = self.head
+
+        while fast.nextNode and fast.nextNode.nextNode:
+            fast = fast.nextNode.nextNode
+            slow = slow.nextNode
+
+        return slow.data
+
 
 if __name__ == '__main__':
     liked_list = LinkedList()
@@ -67,4 +77,4 @@ if __name__ == '__main__':
 
     liked_list.insert_end(100)
     # print(liked_list.size_of_linked_list())
-    liked_list.traverse()
+    print(liked_list.get_middle_item())
